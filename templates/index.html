@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bandung Historical Temperature (2015-2024)</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Bandung Average Temparatures</h1>
+        <p class="summary" id="summary">Loading data...</p>
+
+        <div id="data-section">
+            <h2>Yearly Averages</h2>
+            <table id="temp-table">
+                <thead>
+                    <tr>
+                        <th>Year</th>
+                        <th>Average Temperature(°C)</th>
+                    </tr>
+                </thead>
+                <tbody id="table-body">
+                    <!-- data will be inserted here by JS -->
+                </tbody>
+            </table>
+        </div>
+        <div id="chart-section">
+            <h2>Temparature Trend</h2>
+            <canvas id="chart" width="400" height="200"></canvas>
+        </div>
+        <div id="error-message" class="hidden">
+            <p>Unable to load data</p>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
